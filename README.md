@@ -16,6 +16,8 @@ BShield is a **comprehensive mobile security platform** that protects Android ap
 
 BShield is currently implemented in several leading Vietnamese apps such as VNeID, Techcombank, and others.
 
+**Note:** MB Bank / MBCP (MB Bank Core Patch) is not related to this repo. 
+
 ## List of detection
 
 See more on [docs/DETECTION.md](docs/DETECTION.md).
@@ -23,6 +25,11 @@ See more on [docs/DETECTION.md](docs/DETECTION.md).
 ## License
 
 This project is under [The 3-Clause BSD License](LICENSE).
+
+## FaQ: Module to bypass?
+
+This repository still doesn’t include a bypass module, so I’ll continue researching.
+You can download the latest bypass module from RainyXeon’s repo here:[:3](https://github.com/DeepinRain/BShieldExperimentation/releases/latest)
 
 ## Credit
 - [Renia in RainyLand](https://t.me/RainyXeon)
