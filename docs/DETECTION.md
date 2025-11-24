@@ -37,6 +37,8 @@ resetprop service.adb.root 0
 
 ## Maps detection
 
+- NEW: Custom kernel causing **injection detection** in Native Detector. (caused by task_mmu.c)
+
 BShield can also detect whether the memory maps contain traces of **LineageOS** or injection-related entries.  
 
 You can verify this using the **Native Detector** tool ([download](https://dl.reveny.me/)). 
@@ -45,6 +47,7 @@ For example, it may report "Injection Detection" or "LineageOS Detected (14)".
 Alternatively, you can check manually with:
 
 ```sh
+cat /proc/self/maps | grep "framework-res.jar"
 cat /proc/self/maps | grep "lineage"
 ```
 
@@ -56,6 +59,7 @@ Hiding these entries is difficult. To avoid LineageOS traces, you may need to mo
 - If your kernel supports KernelSU + SuSFS (with SUS_MAP enabled), you can add the leaked map paths to the SuSFS map list. 
 - If you're using font module, it may also leak map entries. Remove it or add its paths to SUS_MAP as mentioned above.
 - You can also try Pedro's TreatWheel module to hide maps, but its effectiveness is limited and it requires a ReZygisk build to operate.
+- If you’re using a custom kernel and encountering “injection detection” in Native Detector, please switch to a different kernel as soon as possible. (Alternatively, you can rebuild your kernel if you have the skills.)
 
 ## Enforcing status
 
