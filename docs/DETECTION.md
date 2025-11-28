@@ -3,7 +3,12 @@
 </p>
 
 <p align="center">
-  <strong>This document lists all the detections observed in BShield for Android. The information is accurate as of November 24th, 2025. If you discover additional detections, feel free to report them in the Issues tab.</strong>
+  <strong>This document lists all the detections observed in BShield for Android. The information is accurate as of November 28th, 2025. If you discover additional detections, feel free to report them in the Issues tab.</strong>
+</p>
+
+<p align="Center">
+  <a href="docs/DETECTION.md">🇬🇧 English</a> |
+  <a href="docs/DETECTION.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
 > [!CAUTION]
