@@ -16,6 +16,7 @@
 
 
 **Table of contents:**
+
 These are BShield code detections, check them if you encounter error codes in a BShield-powered app:
 - Code 1:
   - [Modified app detection](#modified-app-detection-code-1)
