@@ -31,7 +31,7 @@ These are BShield code detections, check them if you encounter error codes in a 
   - [Found injection/maps detection](#maps-detection-code-5)
   - [Enforcing status](#enforcing-status-code-5)
   - [Custom launcher detected (using launcher module)](#leaks-from-custom-launchers-code-5)
-  - [JNI hook detected](#leaks-from-custom-launchers-code-5)
+  - [JNI hook detected](#unconfirmed-jni-hook-detection-code-5)
   - [Bootloader unlocked](#unconfirmed-bootloader-check-syscall-check-code-5-6)
   - [KSU/AP image loop detected](#unconfirmed-ksu-ap-module-image-loop-detection-code-5)
 - Code 6:
