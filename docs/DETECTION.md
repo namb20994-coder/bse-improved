@@ -14,7 +14,49 @@
 > [!CAUTION]
 > **This project is for educational purposes only. The intention is to highlight the weaknesses of current security solutions and to encourage the development of better, more reliable alternatives. Use this information responsibly. Do NOT use this for malicious intent. I am not responsible for the actions taken by users of this module or project.**
 
-## System properties
+
+**Table of contents:**
+- 
+
+## Modified app detection (Code 1)
+
+This error occurs when you install unsigned app or modified app.
+
+**Solution:** Remove the modified, unsigned app from your system and install from Google Play.
+
+## Detected virtual machine/privacy space (Code 2/8)
+
+This error occurs when you install the app in the virtual machine/privacy space.
+
+**Solution:** Don't install the app in the virtual machine/privacy space.
+
+## Package name detection (Code 3/7)
+
+Another classic detection used by many applications, BShield checks the installed app list to identify apps commonly associated with root access.
+
+Below is the list of apps that BShield currently detects (there may be more; these are only the ones confirmed through testing. Feel free to request updates in the Issues tab):
+
+```txt
+com.rifsxd.ksunext
+me.bmax.apatch
+me.weishu.kernelsu
+com.topjohnwu.magisk
+com.drdisagree.iconify
+(and more, maybe LSPosed module)
+```
+
+**Solution:**
+You can use a combination such as:
+
+- [ReLSPosed](https://github.com/ThePedroo/ReLSPosed)
+- [HMA-OSS](https://github.com/frknkrc44/HMA-OSS)
+
+to hide these apps.
+
+## Debugging app (Code 4)
+This error only occurs when using Google’s debug tools. It won’t appear in the production version of the app. If you encounter it, please contact the app developers.
+
+## System properties (Code 5)
 
 BShield also detects certain Android system properties. Some known examples include:
 
@@ -40,7 +82,7 @@ resetprop service.adb.root 0
 
 **Note:** These properties will reset on reboot.
 
-## Maps detection
+## Maps detection (Code 5)
 
 BShield can also detect whether the memory maps contain traces of **LineageOS** or injection-related entries (such as Kernel Injection, just found recently).  
 
@@ -71,7 +113,6 @@ Hiding these entries is difficult. To avoid LineageOS traces, you may need to mo
 You may notice that in the <b>Native Detector</b> tool, it shows <b>Found Injection</b>, and the results look something like the image on the right.
 
 
-
 This happens because your custom kernel likely contains the LineageOS file-hiding patch in task_mmu.c. See: [reference commit (MoonWake@bea4fe4)](https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby/commit/bea4fe4ecfa41edb52f26ce9254a16643dda57ea).
 
 The purpose of this LineageOS file-hiding patch is to replace real LineageOS file paths with `framework-res.apk`.
@@ -84,7 +125,7 @@ However, this hiding mechanism is outdated and unintentionally triggers **Found 
 
 If you are a custom kernel developer, you can revert the commit that contains the LineageOS file-hiding code mentioned above. If you are a user, there is nothing you can do unless you replace the kernel or ask the developer to do so.
 
-## Enforcing status
+## Enforcing status (Code 5)
 
 This is a common detection used by many applications. It is strongly recommended **not** to use a custom ROM with **permissive SELinux**, as it is considered insecure by modern standards.
 
@@ -97,43 +138,21 @@ setenforce 1
 ```
 - Use a kernel or ROM with **Enforcing SELinux**
 
-## Package name detection
-
-Another classic detection used by many applications, BShield checks the installed app list to identify apps commonly associated with root access.
-
-Below is the list of apps that BShield currently detects (there may be more; these are only the ones confirmed through testing. Feel free to request updates in the Issues tab):
-
-```txt
-com.rifsxd.ksunext
-me.bmax.apatch
-me.weishu.kernelsu
-com.topjohnwu.magisk
-com.drdisagree.iconify
-```
-
-**Solution:**
-You can use a combination such as:
-
-- [ReLSPosed](https://github.com/ThePedroo/ReLSPosed)
-- [HMA-OSS](https://github.com/frknkrc44/HMA-OSS)
-
-to hide these apps.
-
-## Leaks from custom launchers
+## Leaks from custom launchers (Code 5)
 
 BShield can detect many custom launcher modules, possibly through mounts, memory maps, or other indicators. 
 
 **Solution:**  
 The simplest approach is to remove custom launchers and use the default system launcher. Alternatively, using standard app launchers typically does not trigger detection.
 
-## [UNCONFIRMED] JNI hook detection
+## [UNCONFIRMED] JNI hook detection (Code 5)
 
 In some releases of VNeID, BShield was able to detect if the app was being hooked. This issue may have been resolved in newer versions of **ReZygisk CI** and **ZygiskNext**.
 
 **Solution:**  
 If you are still experiencing this detection, check your ReZygisk or ZygiskNext version.
 
-## [UNCONFIRMED] Bootloader check, `syscall` check
+## [UNCONFIRMED] Bootloader check, `syscall` check (Code 5/6)
 
 In recent versions of VNeID (CA-E005 error), the app behaves strangely, such as kicking the user out after already logging in. The detection response also appears slower than usual.
 
@@ -142,3 +161,27 @@ It is currently unclear what BShield is detecting here.
 **Solution:**  
 A temporary workaround is to add the package name (`com.vnid`) to the **TrickyStore** `target.txt` file.  
 Open the Tricky Addon WebUI, select VNeID, press **Save**, and you’re done!
+
+## [UNCONFIRMED] KSU/AP module image loop detection (Code 5)
+
+In the recent reports from [@Hzzmonet](t.me/HzzMonet), BShield also detect if the KSU/AP module image proc loop. This because in older KSU/AP, it use OverlayFS to operate, which cause detection.
+
+You can verify this using Native Detector.
+
+For example, it may report "KSU/AP loop" or something similar like that.
+
+**Solution:**
+- If you're in original or older KernelSU, please use Pedro's TreatWheel module to hide those.
+- If you're in KernelSU-Next, please disable the Use OverlayFS switch in settings tab. You have to backup your module before operate.
+
+## ADB debugging/Developer Mode detection (Code 10/11)
+This error occurs when you use Developer Mode or ADB debugging in your device.
+
+**Solutions:**
+You can use a combination such as:
+- [ReLSPosed](https://github.com/ThePedroo/ReLSPosed)
+- [ImNotADeveloper](https://github.com/notyour777/ImNotADeveloper)
+
+to hide Developer Mode, ADB debug mode.
+
+Or don't enable Developer Mode/ADB debugging when you don't use it.
