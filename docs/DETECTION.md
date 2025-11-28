@@ -7,8 +7,8 @@
 </p>
 
 <p align="Center">
-  <a href="docs/DETECTION.md">🇬🇧 English</a> |
-  <a href="docs/DETECTION.vi.md">🇻🇳 Tiếng Việt</a>
+  <a href="DETECTION.md">🇬🇧 English</a> |
+  <a href="DETECTION.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
 > [!CAUTION]
