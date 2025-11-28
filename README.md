@@ -8,8 +8,8 @@
 </p>
 
 <p align="Center">
-  <a href="README.md">🇬🇧 English</a> |
-  <a href="README.vi.md">🇻🇳 Tiếng Việt</a>
+  <a href="https://git.bnamm.org/namm/BSE-Improved/">🇬🇧 English</a> |
+  <a href="https://git.bnamm.org/namm/BSE-Improved/src/branch/main/README.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
 > [!CAUTION]
