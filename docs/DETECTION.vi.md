@@ -20,31 +20,31 @@
 
 Đây là các mã phát hiện của BShield, hãy kiểm tra nếu bạn gặp mã lỗi trong ứng dụng được BShield hỗ trợ:
 - Mã 1:
-- [Phát hiện ứng dụng đã sửa đổi](#modified-app-detection-code-1)
+  - [Phát hiện ứng dụng đã sửa đổi](#modified-app-detection-code-1)
 - Mã 2:
-- [Phát hiện máy ảo](#detected-virtual-machine-privacy-space-code-2-8)
+  - [Phát hiện máy ảo](#detected-virtual-machine-privacy-space-code-2-8)
 - Mã 3:
-- [Phát hiện tên gói](#package-name-detection-code-3-7)
+  - [Phát hiện tên gói](#package-name-detection-code-3-7)
 - Mã 4:
-- [Gỡ lỗi ứng dụng](#debugging-app-code-4)
+  - [Gỡ lỗi ứng dụng](#debugging-app-code-4)
 - Mã 5:
-- [Phát hiện thuộc tính hệ thống nguy hiểm](#system-properties-code-5)
-- [Phát hiện injection/maps](#maps-detection-code-5)
-- [Trạng thái Enforcing](#enforcing-status-code-5)
-- [Phát hiện trình khởi chạy tùy chỉnh (sử dụng module)](#leaks-from-custom-launchers-code-5)
-- [Phát hiện JNI hook](#leaks-from-custom-launchers-code-5)
-- [Đã mở khóa bootloader](#unconfirmed-bootloader-check-syscall-check-code-5-6)
-- [Đã phát hiện hình ảnh KSU/AP bị "proc loop"](#unconfirmed-ksu-ap-module-image-loop-detection-code-5)
+  - [Phát hiện thuộc tính hệ thống nguy hiểm](#system-properties-code-5)
+  - [Phát hiện injection/maps](#maps-detection-code-5)
+  - [Trạng thái Enforcing](#enforcing-status-code-5)
+  - [Phát hiện trình khởi chạy tùy chỉnh (sử dụng module)](#leaks-from-custom-launchers-code-5)
+  - [Phát hiện JNI hook](#leaks-from-custom-launchers-code-5)
+  - [Đã mở khóa bootloader](#unconfirmed-bootloader-check-syscall-check-code-5-6)
+  - [Đã phát hiện hình ảnh KSU/AP bị "proc loop"](#unconfirmed-ksu-ap-module-image-loop-detection-code-5)
 - Mã 6:
-- [Đã mở khóa bootloader](#unconfirmed-bootloader-check-syscall-check-code-5-6)
+  - [Đã mở khóa bootloader](#unconfirmed-bootloader-check-syscall-check-code-5-6)
 - Mã 7:
-- [Phát hiện ứng dụng đáng ngờ](#package-name-detection-code-3-7)
+  - [Phát hiện ứng dụng đáng ngờ](#package-name-detection-code-3-7)
 - Mã 8:
-- [Phát hiện privacy space/nhân bản ứng dụng](#detected-virtual-machine-privacy-space-code-2-8)
+  - [Phát hiện privacy space/nhân bản ứng dụng](#detected-virtual-machine-privacy-space-code-2-8)
 - Mã 10:
-- [Đã bật gỡ lỗi ADB](#adb-debugging-developer-mode-detection-code-10-11)
+  - [Đã bật gỡ lỗi ADB](#adb-debugging-developer-mode-detection-code-10-11)
 - Mã 11:
-- [Chế độ nhà phát triển đã được bật](#adb-debugging-developer-mode-detection-code-10-11)
+  - [Chế độ nhà phát triển đã được bật](#adb-debugging-developer-mode-detection-code-10-11)
 
 ## Phát hiện ứng dụng đã sửa đổi (Mã 1)
 
