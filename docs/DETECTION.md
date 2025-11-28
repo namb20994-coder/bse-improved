@@ -16,7 +16,34 @@
 
 
 **Table of contents:**
-- 
+These are BShield code detections, check them if you encounter error codes in a BShield-powered app:
+- Code 1:
+  - [Modified app detection](#modified-app-detection-code-1)
+- Code 2:
+  - [Detected virtual machine](#detected-virtual-machine-privacy-space-code-2-8)
+- Code 3:
+  - [Package name detection](#package-name-detection-code-3-7)
+- Code 4:
+  - [Debugging app](#debugging-app-code-4)
+- Code 5:
+  - [Detected dangerous system properties](#system-properties-code-5)
+  - [Found injection/maps detection](#maps-detection-code-5)
+  - [Enforcing status](#enforcing-status-code-5)
+  - [Custom launcher detected (using launcher module)](#leaks-from-custom-launchers-code-5)
+  - [JNI hook detected](#leaks-from-custom-launchers-code-5)
+  - [Bootloader unlocked](#unconfirmed-bootloader-check-syscall-check-code-5-6)
+  - [KSU/AP image loop detected](#unconfirmed-ksu-ap-module-image-loop-detection-code-5)
+- Code 6:
+  - [Bootloader unlocked](#unconfirmed-bootloader-check-syscall-check-code-5-6)
+- Code 7:
+  - [Detected suspicious app](#package-name-detection-code-3-7)
+- Code 8:
+  - [Detected privacy space/app cloning](#detected-virtual-machine-privacy-space-code-2-8)
+- Code 10:
+  - [ADB debugging is enabled](#adb-debugging-developer-mode-detection-code-10-11)
+- Code 11: 
+  - [Developer Mode is enabled](#adb-debugging-developer-mode-detection-code-10-11)
+
 
 ## Modified app detection (Code 1)
 
