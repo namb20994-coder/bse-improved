@@ -7,6 +7,11 @@
   <strong>This project is used for researching and testing the detections implemented by BShield for their Android mobile application.</strong>
 </p>
 
+<p align="Center">
+  <a href="README.md">🇬🇧 English</a> |
+  <a href="README.vi.md">🇻🇳 Tiếng Việt</a>
+</p>
+
 > [!CAUTION]
 > **This project is for educational purposes only. The intention is to highlight the weaknesses of current security solutions and to encourage the development of better, more reliable alternatives. Use this information responsibly. Do NOT use this for malicious intent. I am not responsible for the actions taken by users of this module or project.**
 
