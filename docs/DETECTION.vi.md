@@ -24,7 +24,7 @@
 - Mã 2:
   - [Phát hiện máy ảo](#đã-phát-hiện-máy-ảo-không-gian-riêng-tư-mã-2-8)
 - Mã 3:
-  - [Phát hiện tên gói](#phát-hiện-tên-gói-mã-3-7
+  - [Phát hiện tên gói](#phát-hiện-tên-gói-mã-3-7)
 - Mã 4:
   - [Gỡ lỗi ứng dụng](#gỡ-lỗi-ứng-dụng-mã-4)
 - Mã 5:
@@ -74,7 +74,7 @@ com.drdisagree.iconify
 ```
 
 **Giải pháp:**
-Bạn có thể sử dụng kết hợp các lệnh sau:
+Bạn có thể sử dụng các mô-đun sau:
 
 - [ReLSPosed](https://github.com/ThePedroo/ReLSPosed)
 - [HMA-OSS](https://github.com/frknkrc44/HMA-OSS)
@@ -131,7 +131,8 @@ Việc ẩn các mục này rất khó. Để tránh dấu vết của LineageOS
 
 **Đây là một số giải pháp:**
 - Nếu kernel của bạn hỗ trợ KernelSU + SuSFS (với SUS_MAP được bật), bạn có thể thêm các đường dẫn bị "leak injection" vào SuSFS.
-- Nếu bạn đang sử dụng mô-đun phông chữ, nó cũng có thể làm "leak injection". Hãy xóa nó hoặc thêm các đường dẫn của nó vào SUS_MAP như đã đề cập, nhưng hiệu quả của nó bị hạn chế và cần ReZygisk để hoạt động.
+- Nếu bạn đang sử dụng mô-đun phông chữ, nó cũng có thể làm "leak injection". Hãy xóa nó hoặc thêm các đường dẫn của nó vào SUS_MAP như đã đề cập.
+- Bạn có thể sử dụng Treatwheel, nhưng hiệu quả của nó bị hạn chế và cần ReZygisk để hoạt động.
 - Nếu bạn đang sử dụng kernel tùy chỉnh và gặp phải lỗi "Kernel Injection" trong Native Detector, vui lòng chuyển sang một kernel khác càng sớm càng tốt. (Ngoài ra, bạn có thể dựng lại kernel của mình nếu bạn có kỹ năng.)
 
 **Lưu ý về phát hiện maps /system/framework/framework-res.apk. (kernel injection)**
@@ -154,9 +155,9 @@ Nếu bạn là nhà phát triển kernel, bạn có thể revert commit có ch�
 
 ## Trạng thái Enforcing (Mã 5)
 
-Đây là một phát hiện phổ biến được nhiều ứng dụng sử dụng. Chúng tôi khuyến nghị **không** sử dụng ROM tùy chỉnh với **permissive**, vì nó được coi là không an toàn theo tiêu chuẩn hiện đại.
+Đây là một phát hiện phổ biến được nhiều ứng dụng sử dụng. Tôi khuyến nghị **không nên** sử dụng ROM với **permissive**, vì nó được coi là không an toàn theo tiêu chuẩn hiện đại.
 
-Nếu ROM của bạn đang chạy với **permissive**, một số cuộc tấn công có thể xảy ra. BShield yêu cầu **SELinux** được đặt thành **Enforcing** để hoạt động bình thường.
+Nếu ROM của bạn đang chạy với **permissive**, tấn công từ xa (như mô-đun theo dõi, chỉnh sửa quyền của máy) có thể xảy ra. BShield yêu cầu **SELinux** được đặt thành **Enforcing** để hoạt động bình thường.
 
 **Giải pháp:**
 - Đặt SELinux thành **Enforcing**
@@ -164,11 +165,10 @@ Nếu ROM của bạn đang chạy với **permissive**, một số cuộc tấn
 setenforce 1
 ```
 - Sử dụng kernel hoặc ROM với **Enforcing SELinux**
-- Use a kernel or ROM with **Enforcing SELinux**
 
 ## Leak injection từ các trình khởi chạy tùy chỉnh (Mã 5)
 
-BShield có thể phát hiện nhiều mô-đun trình khởi chạy tùy chỉnh, có thể thông qua mount, bản đồ bộ nhớ hoặc các chỉ báo khác.
+BShield có thể phát hiện nhiều mô-đun trình khởi chạy tùy chỉnh, có thể thông qua mount, memory map hoặc khác.
 
 **Giải pháp:**
 Cách đơn giản nhất là xóa các trình khởi chạy tùy chỉnh và sử dụng trình khởi chạy hệ thống mặc định. Ngoài ra, việc sử dụng các trình khởi chạy ứng dụng tiêu chuẩn thường không kích hoạt phát hiện.
@@ -207,7 +207,7 @@ Ví dụ: nó có thể báo "KSU/AP image proc loop" hoặc tương tự.
 Lỗi này xảy ra khi bạn sử dụng Chế độ nhà phát triển hoặc gỡ lỗi ADB trên thiết bị của mình.
 
 **Giải pháp:**
-Bạn có thể sử dụng kết hợp các lệnh sau:
+Bạn có thể sử dụng các mô-đun sau:
 - [ReLSPosed](https://github.com/ThePedroo/ReLSPosed)
 - [ImNotADeveloper](https://github.com/notyour777/ImNotADeveloper)
 
