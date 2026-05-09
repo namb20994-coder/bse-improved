@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://git.bnamm.org/namm/BSE-Improved/raw/branch/main/assets/logo.png" width="800" />
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/logo.png" width="800" />
 </p>
 
 
@@ -8,8 +8,8 @@
 </p>
 
 <p align="Center">
-  <a href="README.md">🇬🇧 English</a> |
-  <a href="README.vi.md">🇻🇳 Tiếng Việt</a>
+  <a href="https://github.com/namb20994-coder/bse-improve/">🇬🇧 English</a> |
+  <a href="https://github.com/namb20994-coder/bse-improved/blob/main/README.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
 > [!CAUTION]
