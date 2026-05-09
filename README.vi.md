@@ -4,7 +4,8 @@
 
 
 <p align="center">
-  <strong>Dự án này được sử dụng để nghiên cứu và cố gắng vượt qua các cơ chế phát hiện mà BShield triển khai.</strong>
+  <strong>Một dự án nghiên cứu chuyên sâu nhằm phân tích và kiểm tra các phát hiện bảo mật của BShield trên Android.</strong>
+  <em>Đây là phiên bản cải tiến của: <a href="https://github.com/DeepLunaria/BShieldExperimentation">DeepLunaria/BShieldExperimentation</a></em>
 </p>
 
 <p align="Center">

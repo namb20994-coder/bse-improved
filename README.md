@@ -4,7 +4,8 @@
 
 
 <p align="center">
-  <strong>This project is used for researching and testing the detections implemented by BShield for their Android mobile application.</strong>
+  <strong>An advanced research project dedicated to analyzing and testing BShield security detections on Android.</strong><br>
+  <em>Enhanced fork of: <a href="https://github.com/DeepLunaria/BShieldExperimentation">DeepLunaria/BShieldExperimentation</a></em>
 </p>
 
 <p align="Center">
