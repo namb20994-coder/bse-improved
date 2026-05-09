@@ -21,7 +21,7 @@ These are BShield code detections, check them if you encounter error codes in a 
 - Code 1:
   - [Modified app detection](#modified-app-detection-code-1)
 - Code 2:
-  - [Detected virtual machine](#detected-virtual-machine-privacy-space-code-2-8)
+  - [Detected virtual machine](#detected-virtual-machineprivacy-space-code-28)
 - Code 3:
   - [Package name detection](#package-name-detection-code-3-7)
 - Code 4:
@@ -44,9 +44,15 @@ These are BShield code detections, check them if you encounter error codes in a 
   - [ADB debugging is enabled](#adb-debugging-developer-mode-detection-code-10-11)
 - Code 11: 
   - [Developer Mode is enabled](#adb-debugging-developer-mode-detection-code-10-11)
+- Code 12:
+  - [Custom ROM detection](#custom-rom-detection)
 
 
 ## Modified app detection (Code 1)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2010-59-55.png" width="800" />
+</p>
 
 This error occurs when you install unsigned app or modified app.
 
@@ -54,11 +60,19 @@ This error occurs when you install unsigned app or modified app.
 
 ## Detected virtual machine/privacy space (Code 2/8)
 
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-00-22.png" width="800" />
+</p>
+
 This error occurs when you install the app in the virtual machine/privacy space.
 
 **Solution:** Don't install the app in the virtual machine/privacy space.
 
 ## Package name detection (Code 3/7)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-00-44.png" width="800" />
+</p>
 
 Another classic detection used by many applications, BShield checks the installed app list to identify apps commonly associated with root access.
 
@@ -81,10 +95,28 @@ You can use a combination such as:
 
 to hide these apps.
 
+Or if you don't use root, just don't install the root manager app in your device.
+
 ## Debugging app (Code 4)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-01-02.png" width="800" />
+</p>
+
 This error only occurs when using Google’s debug tools. It won’t appear in the production version of the app. If you encounter it, please contact the app developers.
 
-## System properties (Code 5)
+## Root detection (Code 5)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-01-17.png" width="800" />
+</p>
+
+
+This is the toughest detection in BSheild when you're using root, it contains a variety of root, system detection.
+
+Below is a list of the specific detections discovered:
+
+### Sensitive system properties
 
 BShield also detects certain Android system properties. Some known examples include:
 
@@ -110,7 +142,7 @@ resetprop service.adb.root 0
 
 **Note:** These properties will reset on reboot.
 
-## Maps detection (Code 5)
+### Maps detection
 
 BShield can also detect whether the memory maps contain traces of **LineageOS** or injection-related entries (such as Kernel Injection, just found recently).  
 
@@ -153,7 +185,7 @@ However, this hiding mechanism is outdated and unintentionally triggers **Found 
 
 If you are a custom kernel developer, you can revert the commit that contains the LineageOS file-hiding code mentioned above. If you are a user, there is nothing you can do unless you replace the kernel or ask the developer to do so.
 
-## Enforcing status (Code 5)
+### Enforcing status
 
 This is a common detection used by many applications. It is strongly recommended **not** to use a custom ROM with **permissive SELinux**, as it is considered insecure by modern standards.
 
@@ -166,32 +198,44 @@ setenforce 1
 ```
 - Use a kernel or ROM with **Enforcing SELinux**
 
-## Leaks from custom launchers (Code 5)
+### Leaks from custom launchers
 
 BShield can detect many custom launcher modules, possibly through mounts, memory maps, or other indicators. 
 
 **Solution:**  
 The simplest approach is to remove custom launchers and use the default system launcher. Alternatively, using standard app launchers typically does not trigger detection.
 
-## [UNCONFIRMED] JNI hook detection (Code 5)
+### JNI hook detection
 
 In some releases of VNeID, BShield was able to detect if the app was being hooked. This issue may have been resolved in newer versions of **ReZygisk CI** and **ZygiskNext**.
 
 **Solution:**  
-If you are still experiencing this detection, check your ReZygisk or ZygiskNext version.
+If you are still experiencing this detection, upgrade your ReZygisk or ZygiskNext version.
 
-## [UNCONFIRMED] Bootloader check, `syscall` check (Code 5/6)
+### Bootloader check, `syscall` check 
 
-In recent versions of VNeID (CA-E005 error), the app behaves strangely, such as kicking the user out after already logging in. The detection response also appears slower than usual.
+Recent VNeID updates have intensified security via BShield, specifically targeting unlocked bootloaders and Keybox integrity, resulting in the CA-E005 error.
 
-It is currently unclear what BShield is detecting here. 
+- Note: Revoked keybox/attestation key can still use for bypassing.
 
 **Solution:**  
-A temporary workaround is to add the package name (`com.vnid`) to the **TrickyStore** `target.txt` file.  
-Open the Tricky Addon WebUI, select VNeID, press **Save**, and you’re done!
+- A temporary workaround is to add the package name (`com.vnid`) to the **JingMatrix/TEESimulator** `target.txt` file.  
+- For Tricky Store user: Open the Tricky Addon WebUI, select VNeID, press **Save**, and you’re done!
 
-## [UNCONFIRMED] KSU/AP module image loop detection (Code 5)
+### Suspicious mount
 
+For a long time, BShield check for mount as a way to detect root. This happen when you install some modules like font changing or launcher.
+
+You can verify this using the **Native Detector** tool ([download](https://github.com/reveny/Android-Native-Root-Detector/releases/latest)).
+
+For example, it may report "Suspicious Mount".
+
+**Solutions:**
+- Check your module’s ZIP file. If it uses `mount --bind`, it will likely trigger a detection. Developers should transition to this [method](https://kernelsu.org/guide/module.html) in the KernelSU documentation.
+- Ensure you are using KernelSU (v3.0+), recent APatch builds, or the latest Magisk. These versions handle mount namespaces more discreetly to bypass modern detection.
+- On specific devices, ReZygisk may fail to unmount suspicious paths effectively. Upgrading to the latest version of ReZygisk is often necessary to resolve these lingering detection triggers.
+
+### [UNCONFIRMED] KSU/AP module image loop detection
 In the recent reports from [@Hzzmonet](t.me/HzzMonet), BShield also detect if the KSU/AP module image proc loop. This because in older KSU/AP, it use OverlayFS to operate, which cause detection.
 
 You can verify this using Native Detector.
@@ -200,7 +244,7 @@ For example, it may report "KSU/AP loop" or something similar like that.
 
 **Solution:**
 - If you're in original or older KernelSU, please use Pedro's TreatWheel module to hide those.
-- If you're in KernelSU-Next, please disable the Use OverlayFS switch in settings tab. You have to backup your module before operate.
+- If you're in KernelSU-Next, please disable the `Use OverlayFS` switch in settings tab. You have to backup your module before operate.
 
 ## ADB debugging/Developer Mode detection (Code 10/11)
 This error occurs when you use Developer Mode or ADB debugging in your device.
