@@ -18,35 +18,35 @@
 
 Đây là các cơ chế phát hiện của BShield, hãy đọc nếu bạn gặp mã lỗi trong ứng dụng được BShield hỗ trợ:
 - Mã 1:
-  - [Ứng dụng đã được chỉnh sửa trái phép](#modified-app-detection-code-1)
+  - [Ứng dụng đã được chỉnh sửa trái phép](#phát-hiện-ứng-dụng-đã-được-chỉnh-sửa-trái-phép-mã-1)
 - Mã 2:
-  - [Phát hiện ứng dụng chạy trong máy ảo](#detected-virtual-machineprivacy-space-code-2--8)
+  - [Phát hiện ứng dụng chạy trong máy ảo](#đã-phát-hiện-máy-ảokhông-gian-riêng-tư-mã-2-và-8)
 - Mã 3:
-  - [Phát hiện các ứng dụng nguy hiểm](#package-name-detection-code-3--7)
+  - [Phát hiện các ứng dụng nguy hiểm](#phát-hiện-app-đáng-ngờnguy-hiểm-sử-dụng-tên-gói-mã-3-và-7)
 - Mã 4:
-  - [Phát hiện các hành vi đáng ngờ như gỡ lỗi ứng dụng trái phép](#debugging-app-code-4)
+  - [Phát hiện các hành vi đáng ngờ như gỡ lỗi ứng dụng trái phép](#phát-hiện-các-hành-vi-đáng-ngờ-như-gỡ-lỗi-ứng-dụng-mã-4)
 - Mã 5:
-  - Hãy tham khảo phần này để biết thông tin về [phát hiện root](#root-detection-code-5).
-  - [Phát hiện các thuộc tính nguy hiểm của hệ thống trong build.prop](#sensitive-system-properties)
-  - [Phát hiện trong bộ nhớ có chứa dấu vết của custom ROM (maps detection)](#maps-detection)
-  - [SELinux của kernel không phải là Enforcing](#enforcing-status)
-  - [Rò rỉ mount/bộ nhớ khi sử dụng mô-đun launcher/font tùy chỉnh](#leaks-from-custom-launchers)
-  - [Phát hiện JNI hooks](#jni-hook-detection)
-  - [Trình khởi động (bootloader) đã được mở khóa](#bootloader-check-syscall-check)
-  - [Phát hiện nhiều mount nghi ngờ](#suspicious-mount)
-  - [Phát hiện "KSU/AP image loop"](#unconfirmed-ksuap-module-image-loop-detection)
-- Code 6:
-  - [Trình khởi động (bootloader) đã được mở khóa](#bootloader-is-unlocked-code-6)
-- Code 7:
-  - [Phát hiện các ứng dụng đáng ngờ](#package-name-detection-code-3--7)
-- Code 8:
-  - [Phát hiện ứng dụng chạy trong "không gian riêng tư" hoặc "nhân bản ứng dụng"](#detected-virtual-machineprivacy-space-code-2--8)
-- Code 10:
-  - [Gỡ lỗi ADB đang bật](#adb-debuggingdeveloper-mode-detection-code-10--11)
-- Code 11: 
-  - [Chế độ nhà phát triển đang bật](#adb-debuggingdeveloper-mode-detection-code-10--11)
-- Code 12:
-  - [Phát hiện custom ROM](#custom-rom-detection-code-12)
+  - Hãy tham khảo phần này để biết thông tin về [phát hiện root](#phát-hiện-root-code-5).
+  - [Phát hiện các thuộc tính nguy hiểm của hệ thống trong build.prop](#phát-hiện-các-thuộc-tính-hệ-thống-nhạy-cảm)
+  - [Phát hiện trong bộ nhớ có chứa dấu vết của custom ROM (maps detection)](#phát-hiện-trong-bộ-nhớ-có-chứa-dấu-vết-của-custom-rom-maps-detection)
+  - [SELinux của kernel không phải là Enforcing](#selinux-của-kernel-không-phải-là-enforcing)
+  - [Rò rỉ mount/bộ nhớ khi sử dụng mô-đun launcher/font tùy chỉnh](#rò-rỉ-mountbộ-nhớ-khi-sử-dụng-mô-đun-launcherfont-tùy-chỉnh)
+  - [Phát hiện JNI hooks](#phát-hiện-hook-jni)
+  - [Trình khởi động (bootloader) đã được mở khóa](#kiểm-tra-tình-trạng-bootloader-kiểm-tra-syscall)
+  - [Phát hiện nhiều mount nghi ngờ](#phát-hiện-nhiều-mount-nghi-ngờ)
+  - [Phát hiện "KSU/AP image loop"](#chưa-xác-nhận-phát-hiện-ksuap-image-loop)
+- Mã 6:
+  - [Trình khởi động (bootloader) đã được mở khóa](#bootloader-đã-được-mở-khóa-mã-6)
+- Mã 7:
+  - [Phát hiện các ứng dụng đáng ngờ](#phát-hiện-app-đáng-ngờnguy-hiểm-sử-dụng-tên-gói-mã-3-và-7)
+- Mã 8:
+  - [Phát hiện ứng dụng chạy trong "không gian riêng tư" hoặc "nhân bản ứng dụng"](#đã-phát-hiện-máy-ảokhông-gian-riêng-tư-mã-2-và-8)
+- Mã 10:
+  - [Gỡ lỗi ADB đang bật](#phát-hiện-chế-độ-gỡ-lỗinhà-phát-triển-adb-mã-10--11)
+- Mã 11: 
+  - [Chế độ nhà phát triển đang bật](#phát-hiện-chế-độ-gỡ-lỗinhà-phát-triển-adb-mã-10--11)
+- Mã 12:
+  - [Phát hiện custom ROM](#phát-hiện-rom-tùy-chỉnh-mã-12)
 
 ## Phát hiện ứng dụng đã được chỉnh sửa trái phép (Mã 1)
 <p align="left">
