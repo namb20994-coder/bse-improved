@@ -79,7 +79,7 @@ This error occurs when you install the app in the virtual machine/privacy space.
 
 **Solution:** Don't install the app in the virtual machine/privacy space.
 
-## Package name detection (Code 3 & 7)
+## Detected suspicious/dangerous app using package name (Code 3 & 7)
 
 <p align="left">
   <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-00-44.png" width="800" />
@@ -121,7 +121,7 @@ Or if you don't use root, just don't install the root manager app in your device
   <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-01-02.png" width="800" />
 </p>
 
-This error only occurs when using Google’s debug tools. It won’t appear in the production version of the app. If you encounter it, please contact the app developers.
+This error only occurs when using Google’s debug tools. **It won’t appear in the production version of the app.** If you encounter it, please contact the app developers.
 
 ## Root detection (Code 5)
 
