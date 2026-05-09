@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <strong>Dự án này được sử dụng để nghiên cứu và thử nghiệm các cơ chế phát hiện mà BShield triển khai cho ứng dụng của họ.</strong>
+  <strong>Dự án này được sử dụng để nghiên cứu và cố gắng vượt qua các cơ chế phát hiện mà BShield triển khai.</strong>
 </p>
 
 <p align="Center">
@@ -13,7 +13,7 @@
 </p>
 
 > [!CAUTION]
-> **Dự án này chỉ phục vụ cho mục đích học tập. Mục tiêu là làm rõ các điểm yếu trong những giải pháp bảo mật hiện tại và khuyến khích phát triển các giải pháp tốt hơn, đáng tin cậy hơn. Hãy sử dụng thông tin này một cách có trách nhiệm. Tuyệt đối không sử dụng với mục đích gây hại. Tôi không chịu trách nhiệm cho bất kỳ hành động nào mà người dùng thực hiện từ dự án này.**
+> **Dự án này chỉ phục vụ cho mục đích học tập. Mục tiêu là làm rõ các điểm yếu trong những giải pháp bảo mật hiện tại và khuyến khích phát triển các giải pháp tốt hơn, đáng tin cậy hơn. Hãy sử dụng dự án này một cách có trách nhiệm. Tuyệt đối không sử dụng với mục đích trái với pháp luật. Tôi không chịu trách nhiệm cho bất kỳ hành động dại dột nào.**
 
 ## E hèm. Vậy, BShield là gì?
 
@@ -21,7 +21,7 @@ BShield là **một nền tảng bảo mật di động toàn diện** giúp b�
 
 Hiện tại, BShield đã được triển khai trong một số ứng dụng hàng đầu tại Việt Nam như VNeID, Techcombank, và nhiều ứng dụng khác.
 
-Lưu ý: MB Bank / MBCP (MB Bank Core Patch) không liên quan đến dự án này..
+**Lưu ý:** MB Bank / MBCP (MB Bank Core Patch) không liên quan đến dự án này.
 
 ## Danh sách các cơ chế phát hiện
 
@@ -33,7 +33,6 @@ Dự án này được cấp phép theo [The 3-Clause BSD License](LICENSE).
 
 ## FaQ: Module để bypass?
 
-Dự án hiện chưa bao gồm module bypass, mình vẫn đang tiếp tục nghiên cứu.
 Bạn có thể tải module bypass mới nhất từ repo của RainyXeon tại đây: [:3](https://github.com/DeepinRain/BShieldExperimentation/releases/latest)
 
 ## Xin cảm ơn những người đã đóng góp vào dự án tuyệt vời này :>

@@ -33,7 +33,6 @@ This project is under [The 3-Clause BSD License](LICENSE).
 
 ## FaQ: Module to bypass?
 
-This repository still doesn’t include a bypass module, so I’ll continue researching.
 You can download the latest bypass module from RainyXeon’s repo here: [:3](https://github.com/DeepinRain/BShieldExperimentation/releases/latest)
 
 ## Credit
