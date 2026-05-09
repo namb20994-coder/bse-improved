@@ -19,33 +19,35 @@
 
 These are BShield code detections, check them if you encounter error codes in a BShield-powered app:
 - Code 1:
-  - [Modified app detection](#modified-app-detection-code-1)
+  - [App is modified](#modified-app-detection-code-1)
 - Code 2:
-  - [Detected virtual machine](#detected-virtual-machineprivacy-space-code-28)
+  - [Detected running in virtual machine](#detected-virtual-machineprivacy-space-code-2--8)
 - Code 3:
-  - [Package name detection](#package-name-detection-code-3-7)
+  - [Detected dangerous app (app package name)](#package-name-detection-code-3--7)
 - Code 4:
-  - [Debugging app](#debugging-app-code-4)
+  - [Detected unusual activities (debugging app)](#debugging-app-code-4)
 - Code 5:
-  - [Detected dangerous system properties](#system-properties-code-5)
-  - [Found injection/maps detection](#maps-detection-code-5)
-  - [Enforcing status](#enforcing-status-code-5)
-  - [Custom launcher detected (using launcher module)](#leaks-from-custom-launchers-code-5)
-  - [JNI hook detected](#unconfirmed-jni-hook-detection-code-5)
-  - [Bootloader unlocked](#unconfirmed-bootloader-check-syscall-check-code-5-6)
-  - [KSU/AP image loop detected](#unconfirmed-ksu-ap-module-image-loop-detection-code-5)
+  - Refer to this section for the [root detection](#root-detection-code-5).
+  - [Detected sensitive system properties](#sensitive-system-properties)
+  - [Memory maps contain traces of custom ROM (maps detection)](#maps-detection)
+  - [Kernel is not enforcing](#enforcing-status)
+  - [Leaked from custom launcher/font module](#leaks-from-custom-launchers)
+  - [JNI hook is detected](#jni-hook-detection)
+  - [Bootloader is unlocked](#bootloader-check-syscall-check)
+  - [Detected suspicious mount](#suspicious-mount)
+  - [KSU/AP image loop detected](#unconfirmed-ksuap-module-image-loop-detection)
 - Code 6:
-  - [Bootloader unlocked](#unconfirmed-bootloader-check-syscall-check-code-5-6)
+  - [Bootloader is unlocked](#bootloader-is-unlocked-code-6)
 - Code 7:
-  - [Detected suspicious app](#package-name-detection-code-3-7)
+  - [Detected suspicious app](#package-name-detection-code-3--7)
 - Code 8:
-  - [Detected privacy space/app cloning](#detected-virtual-machine-privacy-space-code-2-8)
+  - [Detected running in privacy space/app cloning](#detected-virtual-machineprivacy-space-code-2--8)
 - Code 10:
-  - [ADB debugging is enabled](#adb-debugging-developer-mode-detection-code-10-11)
+  - [ADB debugging is enabled](#adb-debuggingdeveloper-mode-detection-code-10--11)
 - Code 11: 
-  - [Developer Mode is enabled](#adb-debugging-developer-mode-detection-code-10-11)
+  - [Developer Mode is enabled](#adb-debuggingdeveloper-mode-detection-code-10--11)
 - Code 12:
-  - [Custom ROM detection](#custom-rom-detection)
+  - [Custom ROM detected](#custom-rom-detection-code-12)
 
 
 ## Modified app detection (Code 1)
