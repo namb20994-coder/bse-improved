@@ -54,24 +54,40 @@ These are BShield code detections, check them if you encounter error codes in a 
   <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2010-59-55.png" width="800" />
 </p>
 
+
 This error occurs when you install unsigned app or modified app.
 
 **Solution:** Remove the modified, unsigned app from your system and install from Google Play.
 
-## Detected virtual machine/privacy space (Code 2/8)
+## Detected virtual machine/privacy space (Code 2 & 8)
 
 <p align="left">
   <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-00-22.png" width="800" />
+  <br>
+  <sub>This is code 2.</sub>
 </p>
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-02-18.png" width="800" />
+  <br>
+  <sub>This is code 8.</sub>
+</p>
+
 
 This error occurs when you install the app in the virtual machine/privacy space.
 
 **Solution:** Don't install the app in the virtual machine/privacy space.
 
-## Package name detection (Code 3/7)
+## Package name detection (Code 3 & 7)
 
 <p align="left">
   <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-00-44.png" width="800" />
+  <br>
+  <sub>This is code 3.</sub>
+</p>
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-02-08.png" width="800" />
+  <br>
+  <sub>This is code 7.</sub>
 </p>
 
 Another classic detection used by many applications, BShield checks the installed app list to identify apps commonly associated with root access.
@@ -232,7 +248,7 @@ For example, it may report "Suspicious Mount".
 
 **Solutions:**
 - Check your module’s ZIP file. If it uses `mount --bind`, it will likely trigger a detection. Developers should transition to this [method](https://kernelsu.org/guide/module.html) in the KernelSU documentation.
-- Ensure you are using KernelSU (v3.0+), recent APatch builds, or the latest Magisk. These versions handle mount namespaces more discreetly to bypass modern detection.
+- Ensure you are using latest KernelSU driver (v3.0+), recent APatch builds, or the latest Magisk. These versions handle mount namespaces more discreetly to bypass modern detection.
 - On specific devices, ReZygisk may fail to unmount suspicious paths effectively. Upgrading to the latest version of ReZygisk is often necessary to resolve these lingering detection triggers.
 
 ### [UNCONFIRMED] KSU/AP module image loop detection
@@ -246,8 +262,32 @@ For example, it may report "KSU/AP loop" or something similar like that.
 - If you're in original or older KernelSU, please use Pedro's TreatWheel module to hide those.
 - If you're in KernelSU-Next, please disable the `Use OverlayFS` switch in settings tab. You have to backup your module before operate.
 
-## ADB debugging/Developer Mode detection (Code 10/11)
+## Bootloader is unlocked (Code 6)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-01-26.png" width="800" />
+</p>
+
+This error occurs when you have unlocked bootloader. Most BShield apps don't block for this yet, but they might in the future. If that happens, check the solutions listed below to fix it.
+
+**Solutions:**
+- A temporary workaround is to add the package name (`com.vnid`) to the **JingMatrix/TEESimulator** `target.txt` file.  
+- For Tricky Store user: Open the Tricky Addon WebUI, select VNeID, press **Save**, and you’re done!
+
+
+## ADB debugging/developer Mode detection (Code 10 & 11)
 This error occurs when you use Developer Mode or ADB debugging in your device.
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-02-32.png" width="800" />
+  <br>
+  <sub>This is code 10.</sub>
+</p>
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/Screenshot%20From%202026-05-09%2011-02-40.png" width="800" />
+  <br>
+  <sub>This is code 11.</sub>
+</p>
 
 **Solutions:**
 You can use a combination such as:
@@ -257,3 +297,16 @@ You can use a combination such as:
 to hide Developer Mode, ADB debug mode.
 
 Or don't enable Developer Mode/ADB debugging when you don't use it.
+
+## Custom ROM detection (Code 12)
+
+<p align="left">
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/1.png" width="800" />
+</p>
+
+This error occurs when a custom ROM is detected on the device. Currently, the [FPT Shop](https://play.google.com/store/apps/details?id=vn.frt.fptshop.app) app is the only application that implements this specific check.
+
+**Solutions:**
+- A temporary workaround is to add the package name (`com.vnid`) to the **JingMatrix/TEESimulator** `target.txt` file.  
+- For Tricky Store user: Open the Tricky Addon WebUI, select VNeID, press **Save**, and you’re done!
+
