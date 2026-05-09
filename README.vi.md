@@ -8,7 +8,7 @@
 </p>
 
 <p align="Center">
-  <a href="https://github.com/namb20994-coder/bse-improve/">🇬🇧 English</a> |
+  <a href="https://github.com/namb20994-coder/bse-improved/">🇬🇧 English</a> |
   <a href="https://github.com/namb20994-coder/bse-improved/blob/main/README.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
@@ -25,7 +25,7 @@ Lưu ý: MB Bank / MBCP (MB Bank Core Patch) không liên quan đến dự án n
 
 ## Danh sách các cơ chế phát hiện
 
-See more on [docs/DETECTION.md](docs/DETECTION.md).
+Xem thêm ở: [docs/DETECTION.md](docs/DETECTION.md).
 
 ## Giấy phép
 

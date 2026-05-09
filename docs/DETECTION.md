@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://git.bnamm.org/namm/BSE-Improved/raw/branch/main/assets/detectionlist.png" width="800" />
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/detectionlist.png" width="800" />
 </p>
 
 <p align="center">
@@ -136,7 +136,7 @@ Hiding these entries is difficult. To avoid LineageOS traces, you may need to mo
 
 **A note about /system/framework/framework-res.apk maps detection. (Kernel injection)**
 
-<img src="https://git.bnamm.org/namm/BSE-Improved/raw/branch/main/assets/photo_2025-11-24_16-50-21.jpg" width="200" align="right">
+<img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/photo_2025-11-24_16-50-21.jpg" width="200" align="right">
 
 You may notice that in the <b>Native Detector</b> tool, it shows <b>Found Injection</b>, and the results look something like the image on the right.
 

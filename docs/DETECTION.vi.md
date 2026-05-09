@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://git.bnamm.org/namm/BSE-Improved/raw/branch/main/assets/detectionlist.png" width="800" />
+  <img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/detectionlist.png" width="800" />
 </p>
 
 <p align="center">
@@ -137,7 +137,7 @@ Việc ẩn các mục này rất khó. Để tránh dấu vết của LineageOS
 
 **Lưu ý về phát hiện maps /system/framework/framework-res.apk. (kernel injection)**
 
-<img src="https://git.bnamm.org/namm/BSE-Improved/raw/branch/main/assets/photo_2025-11-24_16-50-21.jpg" width="200" align="right">
+<img src="https://github.com/namb20994-coder/bse-improved/blob/main/assets/photo_2025-11-24_16-50-21.jpg" width="200" align="right">
 
 Bạn có thể nhận thấy rằng trong công cụ <b>Native Detector</b>, nó hiển thị <b>Đã tìm thấy Injection</b> và kết quả trông giống như hình ảnh bên phải.
 

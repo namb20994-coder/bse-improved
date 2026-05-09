@@ -8,7 +8,7 @@
 </p>
 
 <p align="Center">
-  <a href="https://github.com/namb20994-coder/bse-improve/">🇬🇧 English</a> |
+  <a href="https://github.com/namb20994-coder/bse-improved/">🇬🇧 English</a> |
   <a href="https://github.com/namb20994-coder/bse-improved/blob/main/README.vi.md">🇻🇳 Tiếng Việt</a>
 </p>
 
